@@ -148,7 +148,9 @@
     transition:transform .22s ease, box-shadow .22s ease;
   }
   .mg-item:hover{ transform:translateY(-5px); box-shadow:7px 10px 0 rgba(44,28,16,.18); }
-  .mg-item img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .mg-item img{ width:100%; height:100%; object-fit:cover; object-position:center 35%; display:block; }
+  .mg-item.mg-a img{ object-position:center 62%; }
+  .mg-item.mg-c img{ object-position:center 45%; }
   .mg-item .cap{
     position:absolute; left:0; right:0; bottom:0; padding:16px 16px 12px;
     background:linear-gradient(0deg, rgba(23,19,15,.88), rgba(23,19,15,0));
@@ -249,6 +251,10 @@
   }
   .map-slot .icon{ font-size:34px; margin-bottom:10px; }
   .map-slot span{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:14px; }
+  .map-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .map-embed{ background:var(--negro-2); border:1px solid var(--line); border-radius:20px; padding:16px; }
+  .map-embed .map-label{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:14.5px; margin-bottom:12px; color:var(--crema-2); }
+  .map-embed iframe{ display:block; filter:grayscale(.15) contrast(1.05); }
 
   /* ---------- CONTACTO / FOOTER ---------- */
   .contacto{ background:var(--naranja); color:#fff; padding:90px 0 0; position:relative; overflow:hidden; }
@@ -296,6 +302,7 @@
     .historia .grid, .tec-grid, .contacto .grid{ grid-template-columns:1fr; }
     .cards4{ grid-template-columns:repeat(2,1fr); }
     .loc-grid{ grid-template-columns:1fr; }
+    .map-grid{ grid-template-columns:1fr; }
     .stamp{ position:static; margin:20px auto 0; transform:rotate(-6deg); }
     .menu-mosaic{
       grid-template-columns:1fr; grid-template-rows:none;
@@ -454,19 +461,19 @@
         <div>
           <p class="eyebrow">Tecnología</p>
           <h2>Pedir tu antojo debería ser tan fácil como tenerlo.</h2>
-          <p>Usamos herramientas simples que aceleran cada paso: desde que decides que quieres unas alitas, hasta que las tienes en la mano.</p>
+          <p>Mantenemos el pedido simple: hablas con nosotros directo o pides por la app, y en minutos lo tienes en la mano.</p>
           <div class="tec-list">
             <div class="tec-item">
               <div class="ic">📲</div>
-              <div><h4>Pedidos por WhatsApp y apps de delivery</h4><p>Ordena en segundos, sin llamadas ni esperas — confirmamos tu pedido al instante.</p></div>
+              <div><h4>Pedidos por WhatsApp</h4><p>Escríbenos directo, sin llamadas ni esperas — confirmamos tu pedido al instante y coordinamos la entrega o recolección.</p></div>
             </div>
             <div class="tec-item">
-              <div class="ic">🖥️</div>
-              <div><h4>Pantallas de cocina en tiempo real</h4><p>Cada orden aparece en cocina apenas se confirma, para reducir tiempos de espera.</p></div>
+              <div class="ic">🛵</div>
+              <div><h4>Delivery con Uber Eats</h4><p>¿Prefieres pedir desde la app? Encuéntranos en Uber Eats y recíbelo directo en tu puerta.</p></div>
             </div>
             <div class="tec-item">
-              <div class="ic">📍</div>
-              <div><h4>Seguimiento de entrega</h4><p>Sabes en qué momento va tu pedido, desde que sale de cocina hasta que toca tu puerta.</p></div>
+              <div class="ic">🔥</div>
+              <div><h4>Preparación al momento</h4><p>Cada orden se cocina desde cero apenas se confirma, para que llegue caliente y crujiente sin importar el canal por el que pediste.</p></div>
             </div>
           </div>
         </div>
@@ -481,7 +488,7 @@
           </div>
         </div>
       </div>
-      <p style="font-size:14px; color:rgba(44,28,16,.55); font-style:italic; margin-top:30px;">* Cuéntanos si ya usan una app o plataforma específica (propia, Rappi, Uber Eats, etc.) para reemplazar este borrador con lo real.</p>
+      
     </div>
   </section>
 
@@ -510,9 +517,21 @@
           <p>Estamos preparando la siguiente ubicación. ¿Quieres que Antojo Prohibido llegue a tu zona? Escríbenos.</p>
         </div>
       </div>
-      <div class="map-slot">
-        <div class="icon">🗺️</div>
-        <span>Aquí puede ir un mapa interactivo con tus ubicaciones (Google Maps embed)</span>
+      <div class="map-grid">
+        <div class="map-embed">
+          <p class="map-label">📍 Zacateros 57</p>
+          <iframe
+            src="https://www.google.com/maps?q=Zacateros+57,+Centro,+San+Miguel+de+Allende,+Gto.&output=embed"
+            width="100%" height="320" style="border:0; border-radius:18px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Mapa Sucursal Zacateros"></iframe>
+        </div>
+        <div class="map-embed">
+          <p class="map-label">📍 Calzada de la Estación 26</p>
+          <iframe
+            src="https://www.google.com/maps?q=Calzada+de+la+Estaci%C3%B3n+26,+Centro,+San+Miguel+de+Allende,+Gto.&output=embed"
+            width="100%" height="320" style="border:0; border-radius:18px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Mapa Sucursal Calzada de la Estación"></iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -531,12 +550,6 @@
             <div class="contact-row"><span class="ic">📍</span><div><b>Zacateros</b>Zacateros 57, Col. Centro, San Miguel de Allende</div></div>
             <div class="contact-row"><span class="ic">📍</span><div><b>Calzada de la Estación</b>Calzada de la Estación 26, Col. Centro, San Miguel de Allende</div></div>
             <div class="contact-row"><span class="ic">🕒</span><div><b>Horario</b>Zacateros: 1pm – 9pm · Calzada de la Estación: 12pm – 8pm</div></div>
-          </div>
-          <div class="social" aria-label="Redes sociales">
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="TikTok">🎵</a>
-            <a href="#" aria-label="WhatsApp">💬</a>
           </div>
         </div>
         <form class="contact-form" id="contactForm">
@@ -576,9 +589,11 @@
   document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
     const nombre = document.getElementById('nombre').value;
+    const telefono = document.getElementById('telefono').value;
     const mensaje = document.getElementById('mensaje').value;
-    const texto = encodeURIComponent(`Hola, soy ${nombre}. ${mensaje}`);
-    window.open(`https://wa.me/5214151252637?text=${texto}`, '_blank');
+    const asunto = encodeURIComponent(`Antojo desde la web — ${nombre}`);
+    const cuerpo = encodeURIComponent(`Nombre: ${nombre}\nTeléfono: ${telefono}\n\nMensaje:\n${mensaje}`);
+    window.location.href = `mailto:grupodoperadm@gmail.com?subject=${asunto}&body=${cuerpo}`;
   });
 </script>
 </body>
