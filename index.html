@@ -145,7 +145,7 @@
   .mg-d{ grid-area:d; } .mg-e{ grid-area:e; } .mg-f{ grid-area:f; }
   .mg-item{
     position:relative; border-radius:18px; overflow:hidden; box-shadow:5px 6px 0 rgba(44,28,16,.14);
-    transition:transform .22s ease, box-shadow .22s ease;
+    transition:transform .22s ease, box-shadow .22s ease; cursor:zoom-in;
   }
   .mg-item:hover{ transform:translateY(-5px); box-shadow:7px 10px 0 rgba(44,28,16,.18); }
   .mg-item img{ width:100%; height:100%; object-fit:cover; object-position:center 35%; display:block; }
@@ -158,6 +158,23 @@
   }
   .mg-item .cap h4{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:15.5px; }
   .mg-item.mg-a .cap h4{ font-size:19px; }
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    display:none; position:fixed; inset:0; z-index:200; background:rgba(15,10,7,.92);
+    align-items:center; justify-content:center; padding:40px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{
+    max-width:min(900px, 92vw); max-height:88vh; border-radius:16px;
+    box-shadow:0 20px 60px rgba(0,0,0,.5); animation:lightboxIn .18s ease;
+  }
+  @keyframes lightboxIn{ from{ opacity:0; transform:scale(.96); } to{ opacity:1; transform:scale(1); } }
+  .lightbox-close{
+    position:absolute; top:22px; right:26px; background:rgba(255,255,255,.12); color:#fff; border:none;
+    width:44px; height:44px; border-radius:50%; font-size:18px; cursor:pointer;
+  }
+  .lightbox-close:hover{ background:rgba(255,255,255,.25); }
 
   /* ---------- HISTORIA ---------- */
   .historia{ background:var(--crema); padding:100px 0 90px; }
@@ -329,7 +346,7 @@
       <li><a href="#modelo">Modelo operativo</a></li>
       <li><a href="#tecnologia">Tecnología</a></li>
       <li><a href="#expansion">Expansión</a></li>
-      <li><a href="#contacto" class="nav-cta">Pide ya</a></li>
+      <li><a href="https://wa.me/5214151252637?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="nav-cta" target="_blank" rel="noopener">Pide ya</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
   </nav>
@@ -344,7 +361,8 @@
       <p class="tagline">Se dice fácil resistirse... hasta que lo hueles.</p>
       <p class="sub">Boneless, alitas, banderillas, buldak y todo lo que tu antojo te pide a gritos — preparado al momento y listo para caer directo a tu puerta.</p>
       <div class="hero-ctas">
-        <a href="https://wa.me/5214151252637?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="btn btn-primary" target="_blank" rel="noopener">📲 Pide por WhatsApp</a>
+        <a href="https://wa.me/5214151118099?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Zacateros" class="btn btn-primary" target="_blank" rel="noopener">📲 Pedir en Zacateros</a>
+        <a href="https://wa.me/5214151252637?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Calzada%20de%20la%20Estaci%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener">📲 Pedir en Calzada</a>
         <a href="#modelo" class="btn btn-outline">Conócenos</a>
       </div>
     </div>
@@ -370,27 +388,27 @@
         <p>Una probadita de lo que sale de nuestra cocina — todo recién preparado, bañado en salsa y empacado para que llegue tan bien como se ve aquí.</p>
       </div>
       <div class="menu-mosaic">
-        <div class="mg-item mg-a">
+        <div class="mg-item mg-a" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Boneless Burger">
           <img src="boneless-burger.jpg" alt="Boneless Burger con aderezo bañado encima">
           <div class="cap"><h4>Boneless Burger</h4></div>
         </div>
-        <div class="mg-item mg-b">
+        <div class="mg-item mg-b" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Criminal estilo buldak">
           <img src="criminal-buldak.jpg" alt="Bowl Criminal estilo buldak con queso derretido">
           <div class="cap"><h4>Criminal (estilo buldak)</h4></div>
         </div>
-        <div class="mg-item mg-c">
+        <div class="mg-item mg-c" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Doraditas">
           <img src="doraditas.jpg" alt="Banderillas Doraditas con ketchup y mostaza">
           <div class="cap"><h4>Doraditas</h4></div>
         </div>
-        <div class="mg-item mg-d">
+        <div class="mg-item mg-d" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Canasta Snack">
           <img src="canasta-snack.jpg" alt="Canasta Snack con boneless, papas y aros de cebolla">
           <div class="cap"><h4>Canasta Snack</h4></div>
         </div>
-        <div class="mg-item mg-e">
+        <div class="mg-item mg-e" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto Para disfrutar">
           <img src="disfruta-cono.jpg" alt="Cono de alitas bañadas en salsa">
           <div class="cap"><h4>Para disfrutar</h4></div>
         </div>
-        <div class="mg-item mg-f">
+        <div class="mg-item mg-f" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Crujientes">
           <img src="crujientes.jpg" alt="Papas onduladas crujientes">
           <div class="cap"><h4>Crujientes</h4></div>
         </div>
@@ -572,6 +590,11 @@
 
 </main>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -585,6 +608,25 @@
     navLinks.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
   }));
+
+  // Lightbox de fotos del menú
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  function openLightbox(img){
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('open');
+  }
+  function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
+  document.querySelectorAll('[data-lightbox]').forEach(item => {
+    item.addEventListener('click', () => openLightbox(item.querySelector('img')));
+    item.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLightbox(item.querySelector('img')); }
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
 
   document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
