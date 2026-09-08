@@ -108,10 +108,11 @@
   .hero-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:50px;}
 
   /* marquee ticker */
+  .ticker-clip{ overflow:hidden; }
   .ticker{
     background:var(--amarillo); border-top:3px solid var(--negro); border-bottom:3px solid var(--negro);
-    overflow:hidden; white-space:nowrap; transform:rotate(-1.2deg) scale(1.03);
-    margin:0 -10px;
+    overflow:hidden; white-space:nowrap; transform:rotate(-1.2deg) scale(1.08);
+    margin:0 -40px;
   }
   .ticker-track{display:inline-block; animation:scroll 26s linear infinite; padding:12px 0;}
   .ticker span{
@@ -360,20 +361,22 @@
     <div class="hero-inner">
       <img src="logo.png" alt="Antojo Prohibido" class="hero-logo">
       <p class="tagline">Se dice fácil resistirse... hasta que lo hueles.</p>
-      <p class="sub">Boneless, alitas, banderillas, buldak y todo lo que tu antojo te pide a gritos — preparado al momento y listo para caer directo a tu puerta.</p>
+      <p class="sub">Boneless, alitas, banderillas, ramen y todo lo que tu antojo te pide a gritos — preparado al momento y listo para caer directo a tu puerta.</p>
       <div class="hero-ctas">
         <a href="https://wa.me/5214151118099?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Zacateros" class="btn btn-primary" target="_blank" rel="noopener">📲 Pedir en Zacateros</a>
         <a href="https://wa.me/5214151252637?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Calzada%20de%20la%20Estaci%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener">📲 Pedir en Calzada</a>
         <a href="#modelo" class="btn btn-outline">Conócenos</a>
       </div>
     </div>
-    <div class="ticker" aria-hidden="true">
+    <div class="ticker-clip" aria-hidden="true">
+    <div class="ticker">
       <div class="ticker-track">
         <span>Boneless</span><span>Alitas</span><span>Banderillas</span><span>Icees</span><span>Boneless Burger</span>
         <span>Ramen Criminal</span><span>Dedos rellenos</span><span>Mini boneless</span><span>Papas fritas</span><span>Refrescos</span><span>Sundae</span><span>Cono de helado</span><span>Frappés</span>
         <span>Boneless</span><span>Alitas</span><span>Banderillas</span><span>Icees</span><span>Boneless Burger</span>
         <span>Ramen Criminal</span><span>Dedos rellenos</span><span>Mini boneless</span><span>Papas fritas</span><span>Refrescos</span><span>Sundae</span><span>Cono de helado</span><span>Frappés</span>
       </div>
+    </div>
     </div>
     <svg class="drip drip-into-crema2" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,0 L1200,0 L1200,40 C1150,40 1140,80 1100,80 C1060,80 1050,45 1010,45 C970,45 965,90 920,90 C875,90 870,50 830,50 C790,50 785,75 745,75 C705,75 700,40 660,40 C620,40 615,70 575,70 C535,70 530,35 490,35 C450,35 445,65 405,65 C365,65 360,42 320,42 C280,42 275,78 235,78 C195,78 190,48 150,48 C110,48 105,72 65,72 C40,72 20,55 0,55 Z"></path>
@@ -395,11 +398,11 @@
         </div>
         <div class="mg-item mg-b" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Criminal estilo buldak">
           <img src="criminal-buldak.jpg" alt="Bowl Criminal estilo buldak con queso derretido">
-          <div class="cap"><h4>Criminal (estilo buldak)</h4></div>
+          <div class="cap"><h4>Ramen Criminal</h4></div>
         </div>
         <div class="mg-item mg-c" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Doraditas">
           <img src="doraditas.jpg" alt="Banderillas Doraditas con ketchup y mostaza">
-          <div class="cap"><h4>Doraditas</h4></div>
+          <div class="cap"><h4>Banderillas</h4></div>
         </div>
         <div class="mg-item mg-d" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Canasta Snack">
           <img src="canasta-snack.jpg" alt="Canasta Snack con boneless, papas y aros de cebolla">
@@ -407,11 +410,11 @@
         </div>
         <div class="mg-item mg-e" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto Para disfrutar">
           <img src="disfruta-cono.jpg" alt="Cono de alitas bañadas en salsa">
-          <div class="cap"><h4>Para disfrutar</h4></div>
+          <div class="cap"><h4>Boneless</h4></div>
         </div>
         <div class="mg-item mg-f" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Crujientes">
           <img src="crujientes.jpg" alt="Papas onduladas crujientes">
-          <div class="cap"><h4>Crujientes</h4></div>
+          <div class="cap"><h4>Papas fritas estilo canasta</h4></div>
         </div>
       </div>
     </div>
@@ -454,7 +457,7 @@
           <div class="n">02</div>
           <div class="ic">🧊</div>
           <h3>Cocina de alto flujo</h3>
-          <p>Estaciones pensadas para freír, bañar en salsa y emplatar en minutos, incluso en horas pico de antojo (viernes 9pm, lo sabemos).</p>
+          <p>Estaciones pensadas para freír, bañar en salsa y emplatar en minutos, incluso en horas pico de antojo.</p>
         </div>
         <div class="card">
           <div class="n">03</div>
