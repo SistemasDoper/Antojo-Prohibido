@@ -161,6 +161,12 @@
   .mg-item .cap h4{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:15.5px; }
   .mg-item.mg-a .cap h4{ font-size:19px; }
 
+  .menu-extra-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:20px;
+  }
+  .mg-item.mg-square{ aspect-ratio:1/1; }
+  .mg-item.mg-square img{ object-position:center 40%; }
+
   /* ---------- LIGHTBOX ---------- */
   .lightbox{
     display:none; position:fixed; inset:0; z-index:200; background:rgba(15,10,7,.92);
@@ -328,6 +334,7 @@
       grid-template-areas:"a" "b" "c" "d" "e" "f";
       grid-auto-rows:230px;
     }
+    .menu-extra-grid{ grid-template-columns:repeat(2,1fr); }
   }
   @media (prefers-reduced-motion: reduce){
     .ticker-track{ animation:none; }
@@ -415,6 +422,25 @@
         <div class="mg-item mg-f" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Crujientes">
           <img src="crujientes.jpg" alt="Papas onduladas crujientes">
           <div class="cap"><h4>Papas fritas estilo canasta</h4></div>
+        </div>
+      </div>
+
+      <div class="menu-extra-grid">
+        <div class="mg-item mg-square" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Alitas">
+          <img src="alitas.jpg" alt="Alitas bañadas en salsa Antojo Inigualable">
+          <div class="cap"><h4>Alitas</h4></div>
+        </div>
+        <div class="mg-item mg-square" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Cono Boneless">
+          <img src="cono-boneless.jpg" alt="Cono de boneless con papas a la francesa">
+          <div class="cap"><h4>Cono Boneless</h4></div>
+        </div>
+        <div class="mg-item mg-square" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Dedos de Queso">
+          <img src="dedos-queso.jpg" alt="Dedos de queso empanizados con papas">
+          <div class="cap"><h4>Dedos de Queso</h4></div>
+        </div>
+        <div class="mg-item mg-square" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto de Icee">
+          <img src="icee.jpg" alt="Icees de sabores">
+          <div class="cap"><h4>Icee</h4></div>
         </div>
       </div>
     </div>
